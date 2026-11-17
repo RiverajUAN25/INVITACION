@@ -101,7 +101,7 @@
         /* --- Estilos para el Pastel de Cumpleaños --- */
       #cake-container {
             position: absolute;
-            top: 50%; /* <--- ¡Este es el parámetro que debes cambiar! */
+            top: 50%; 
             left: 50%;
             transform: translateX(-50%) scale(0) rotateY(180deg);
             opacity: 0;
@@ -298,19 +298,60 @@
             pointer-events: none;
         }
         
-        /* Media Query para pantallas pequeñas */
+        /* Media Query para pantallas pequeñas (Celulares) */
         @media (max-width: 640px) {
-            .bouquet-image-container { top: 8%; max-width: 270px; }
-            .message-box { bottom: 1%; padding: 0.8rem 1rem; max-width: 95%; }
-            .message-box h2 { font-size: 1.8rem; }
-            .message-box p { font-size: 0.85rem; }
-            
-            #start-screen h1 {
-                font-size: 2.8rem; /* Ajuste para que luzca grande pero sin salirse en celulares */
+            body {
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 15px 10px 30px 10px;
+                overflow-y: auto;
+                min-height: 100dvh;
+            }
+
+            .bouquet-image-container { 
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                max-width: 240px; 
+                margin: 0 auto;
             }
             
-            #cake-container { top: 28%; left: 50%; transform: translateX(-50%) scale(0.75) rotateY(180deg); }
-            .cake-built { transform: translateX(-50%) scale(0.75) rotateY(0deg) !important; }
+            #cake-container { 
+                position: relative;
+                top: auto;
+                bottom: auto;
+                left: auto;
+                transform: scale(0) rotateY(180deg);
+                margin-top: -35px;
+                margin-bottom: -10px;
+            }
+            
+            .cake-built { 
+                transform: scale(0.75) rotateY(0deg) !important; 
+            }
+
+            .message-box { 
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: translateY(30px);
+                padding: 0.9rem 1rem; 
+                max-width: 95%; 
+                margin: 0 auto;
+            }
+
+            .bloomed .message-box {
+                transform: translateY(0);
+            }
+
+            .message-box h2 { font-size: 1.7rem; line-height: 1.2; }
+            .message-box p { font-size: 0.85rem; line-height: 1.35; }
+            
+            #start-screen h1 {
+                font-size: 2.8rem;
+            }
+            
             #cake-layer-1 { width: 180px; height: 35px; }
             #cake-layer-2 { width: 130px; height: 30px; }
             #cake-frosting { width: 130px; height: 10px; top: -7px; }
@@ -365,8 +406,6 @@
             🎉 <strong>Fecha:</strong> Viernes 20 de noviembre<br>
             ⏰ <strong>Hora:</strong> 6:00 PM<br>
             📍 <strong>Lugar:</strong> <a href="https://maps.app.goo.gl/j5VdeAy9nt1KpPcs6" target="_blank" style="color: #d946ef; text-decoration: underline; font-weight: bold;">Nicolás Bravo Ote y Manuel González JR # 503, Ciudad Victoria, Tamaulipas 87000</a>
-        </p>
-            </a>
         </p>
         <p style="margin-top: 8px;">
             Te espero para celebrar mi fiesta de cumpleaños
